@@ -11,6 +11,7 @@ import math
 from utils import add_eos
 
 def preprocess_rlhf_dataset(row: Dict, prompt_symbol: str):
+    "preprocess the rlhf dataset to get the prompt, chosen responce, rejected responce and sft responce"
     chosen_ex = row["chosen"]
     reject_ex = row["rejected"]
     prompt_idx = chosen_ex.rfind(prompt_symbol) 
@@ -22,7 +23,7 @@ def preprocess_rlhf_dataset(row: Dict, prompt_symbol: str):
     return prompt, chosen_responce, reject_responce, sft_responce
 
 def get_dataset(dataset_name: str, train_test: str, cache_dir: str = None, symbol: str = None):
-
+     "Load the dataset from huggingface and preprocess it to a list of dictionaries"
     print(f"Load {dataset_name} {train_test} dataset from huggingface")
     dataset = datasets.load_dataset(dataset_name, cache_dir=cache_dir, split=train_test)
     print("Done!")
@@ -42,7 +43,7 @@ def get_dataset(dataset_name: str, train_test: str, cache_dir: str = None, symbo
     return data
 
 def tokenize_batch_element(prompt: str, chosen: str, rejected: str, tokenizer: nn.Module, max_len: int, max_prompt_len: int):
-    
+    "Define the tokenize function for the dataset element"
     prompt_tokens = tokenizer(prompt, add_special_tokens=False)
     chosen_tokens = tokenizer(chosen, add_special_tokens=False)
     rejected_tokens = tokenizer(rejected, add_special_tokens=False)
@@ -55,12 +56,10 @@ def tokenize_batch_element(prompt: str, chosen: str, rejected: str, tokenizer: n
     if len(prompt_tokens['input_ids']) + longer_response_length > max_len:
         prompt_tokens = {k: v[-max_prompt_len:] for k, v in prompt_tokens.items()}
 
-    # if that's still too long, truncate the response
     if len(prompt_tokens['input_ids']) + longer_response_length > max_len:
         chosen_tokens = {k: v[:max_len - max_prompt_len] for k, v in chosen_tokens.items()}
         rejected_tokens = {k: v[:max_len - max_prompt_len] for k, v in rejected_tokens.items()}
 
-    # Concate prompt and response
     chosen_sequence_tokens = {k: prompt_tokens[k] + chosen_tokens[k] for k in chosen_tokens}
     rejected_sequence_tokens = {k: prompt_tokens[k] + rejected_tokens[k] for k in rejected_tokens}
 
@@ -82,6 +81,7 @@ def tokenize_batch_element(prompt: str, chosen: str, rejected: str, tokenizer: n
     return batch_element
 
 def get_collate_fn(pad_token_id: int):
+    "Return the collate function for the dataset"
     def collate_fn(batch):
         paded_batch = {}
         for key in batch[0].keys():
@@ -107,6 +107,7 @@ def get_collate_fn(pad_token_id: int):
 
 
 class CustomDataset(Dataset):
+     "Define the custom dataset class for the training and evaluation of the model"
     def __init__(self, dataset_name: str, train_test: str, cache_dir: str, tokenizer: nn.Module, max_len: int, max_prompt_len: int):
 
         self.tokenizer = tokenizer
@@ -153,7 +154,7 @@ def get_batch_iter(dataset_name: str,
                    n_examples: int = 0,
                    num_workers: int = 1,
                    ) -> iter:
-
+    "Return the batch iterator for the dataset using the DataLoader class"
     assert n_examples > batch_size, "n_examples should be greater than batch_size"
 
     torch.manual_seed(seed)
