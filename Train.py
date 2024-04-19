@@ -25,7 +25,7 @@ def main(config: DictConfig):
             project=config.wandb.project,
             config=OmegaConf.to_container(config),
             dir=config.wandb.wandb_dir,
-            name=config.dpo_exp_name,
+            name=config.sft_exp_name,
             reinit=True,
         )
         
