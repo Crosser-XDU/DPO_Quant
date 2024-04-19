@@ -50,13 +50,13 @@ I conducted the experiment with BitsandBytes to load the quantization model. The
 
 In SFT, the run lasts 2h20min, we can see from the figure that the eval_loss snowly decreases when the step grows.
 
-![Figure1](./output/W&B Chart 2024_4_19 17_25_30.png)
+![Figure1](.\output\W&B Chart 2024_4_19 17_25_30.png)
 
 For more details, check [here](https://wandb.ai/qiyuwu/pythia2_8B_DPO_Quant/runs/co6guc8k?nw=nwuserwqy123202108) 
 
 In DPO, the run lasts 7h30min, we can see from the figure that the accuracies and margins snowly increases when the step grows.
 
-![Figure2](./output/W&B Chart 2024_4_19 17_24_13.png)
-![Figure3](./output/W&B Chart 2024_4_19 17_25_00.png)
+![Figure2](.\output\W&B Chart 2024_4_19 17_24_13.png)
+![Figure3](.\output\W&B Chart 2024_4_19 17_25_00.png)
 
 For more details, check [here](https://wandb.ai/qiyuwu/pythia2_8B_DPO_Quant/runs/0tejjuhj?nw=nwuserwqy123202108) 
