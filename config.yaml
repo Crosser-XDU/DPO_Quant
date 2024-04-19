@@ -1,0 +1,90 @@
+#random seed
+seed: 0
+
+debug: False
+
+#LLM for training
+model_name: "EleutherAI/pythia-2.8b"
+
+#"internlm/internlm2-chat-7b"
+
+#cache_dir for storing the model and dataset
+cache_dir: "./cache"
+
+policy_dtype: float16
+
+#dir for storing the output
+output_dir: "./output"
+
+#set the config of quantization
+quantization_config:
+  load_in_4bit: True
+  bnb_4bit_compute_dtype: bfloat16
+  bnb_4bit_use_double_quant: True
+  bnb_4bit_quant_type: 'nf4'
+
+#datasets
+dataset_name: "Anthropic/hh-rlhf"
+
+#the batch size for training
+batch_size: 64
+
+#set the numworkers
+num_workers: 1
+
+#the number of examples to train for; if null, must specify n_epochs
+n_examples: 25600
+
+# the number of examples to evaluate on (and sample from, if sample_during_eval is true)
+n_eval_examples: 256
+
+#the eval batch size
+eval_batch_size: 4
+
+#set the optimizer
+optimizer: RMSprop
+
+# number of linear warmup steps for the learning rate
+warmup_steps: 150
+
+# evaluate and save model every eval_every steps
+eval_every: 256
+
+save_ratio: 0.5
+
+#set do_first_eval
+do_first_eval: False
+
+loss:
+  beta: 0.1
+  reference_free: False
+
+# wandb configuration
+wandb:
+  enabled: true
+  entity: null
+  project: "pythia2_8B_DPO_no_quant"
+  wandb_dir: "./cache"
+
+sft_exp_name: "sft"
+
+dpo_exp_name: "dpo"
+
+exp_name: "direct-preference-optimization"
+
+#learning rate
+lr: 5e-7
+
+gradient_accumulation_steps: 16
+
+# the maximum allowed length for an input (prompt + response)
+max_length: 512
+
+# the maximum allowed length for a prompt
+max_prompt_length: 256
+
+# the maximum gradient norm to clip to
+max_grad_norm: 10.0
+
+# prevent wandb from logging more than once per minimum_log_interval_secs
+minimum_log_interval_secs: 1.0
