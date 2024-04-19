@@ -63,7 +63,7 @@ loss:
 wandb:
   enabled: true
   entity: null
-  project: "pythia2_8B_DPO_no_quant"
+  project: "pythia2_8B_DPO_Quant"
   wandb_dir: "./cache"
 
 sft_exp_name: "sft"
