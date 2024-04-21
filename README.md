@@ -69,5 +69,6 @@ The work is based on a lot of previous work and blogs, as well as some HuggingFa
 
 - [eric-mitchell/direct-preference-optimization: Reference implementation for DPO (Direct Preference Optimization) (github.com)](https://github.com/eric-mitchell/direct-preference-optimization)
 - [FSDP-QLoRA (huggingface.co)](https://huggingface.co/docs/bitsandbytes/main/en/fsdp_qlora)
+- [Behind the pipeline - Hugging Face NLP Course](https://huggingface.co/learn/nlp-course/en/chapter2/2)
 - [QLoRA 量化实现：BitsandBytes 代码研究 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/646235855)
 - [Answer.AI - You can now train a 70b language model at home](https://www.answer.ai/posts/2024-03-06-fsdp-qlora.html)
