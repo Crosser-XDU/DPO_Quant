@@ -60,3 +60,14 @@ In DPO, the run lasts 7h30min, we can see from the figure that the accuracies an
 ![Figure3](./output/DPO_2.png)
 
 For more details, check [here](https://wandb.ai/qiyuwu/pythia2_8B_DPO_Quant/runs/0tejjuhj?nw=nwuserwqy123202108) 
+
+Compared to the example in [eric-mitchell/direct-preference-optimization: Reference implementation for DPO (Direct Preference Optimization) (github.com)](https://github.com/eric-mitchell/direct-preference-optimization), our experiment is more unstable in training, but achieved pretty good results in accuracy. Besides, due to time constraints, our experiments were only trained on top of about 25K conversations, which is why our experiments did not achieve significantly good results on top of some other metrics.
+
+## Reference
+
+The work is based on a lot of previous work and blogs, as well as some HuggingFace courses and documentation. Many thanks to authors for sharing this, it has helped me gain a lot. Listed below are the references I used to learn.
+
+- [eric-mitchell/direct-preference-optimization: Reference implementation for DPO (Direct Preference Optimization) (github.com)](https://github.com/eric-mitchell/direct-preference-optimization)
+- [FSDP-QLoRA (huggingface.co)](https://huggingface.co/docs/bitsandbytes/main/en/fsdp_qlora)
+- [QLoRA 量化实现：BitsandBytes 代码研究 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/646235855)
+- [Answer.AI - You can now train a 70b language model at home](https://www.answer.ai/posts/2024-03-06-fsdp-qlora.html)
