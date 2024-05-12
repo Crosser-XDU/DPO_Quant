@@ -23,7 +23,7 @@ def preprocess_rlhf_dataset(row: Dict, prompt_symbol: str):
     return prompt, chosen_responce, reject_responce, sft_responce
 
 def get_dataset(dataset_name: str, train_test: str, cache_dir: str = None, symbol: str = None):
-     "Load the dataset from huggingface and preprocess it to a list of dictionaries"
+    "Load the dataset from huggingface and preprocess it to a list of dictionaries"
     print(f"Load {dataset_name} {train_test} dataset from huggingface")
     dataset = datasets.load_dataset(dataset_name, cache_dir=cache_dir, split=train_test)
     print("Done!")
@@ -107,7 +107,7 @@ def get_collate_fn(pad_token_id: int):
 
 
 class CustomDataset(Dataset):
-     "Define the custom dataset class for the training and evaluation of the model"
+    "Define the custom dataset class for the training and evaluation of the model"
     def __init__(self, dataset_name: str, train_test: str, cache_dir: str, tokenizer: nn.Module, max_len: int, max_prompt_len: int):
 
         self.tokenizer = tokenizer
