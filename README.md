@@ -72,7 +72,7 @@ Besides, comparing the two losses, we can find that the IPO loss's rewards of ch
 
 ## 🤗Huggingface Space Deployment
 
-Above is the chatbot deployed on Huggingface Space, you can have a try😄(due to the poor computility of the 2vCPU, the responce time may be about a minute).
+Above is the chatbot deployed on Huggingface Space, you can have a try[link](https://huggingface.co/spaces/QiyuWu/DPO_Internlm2_1_8B)(due to the poor computility of the 2vCPU, the responce time may be about a minute).
 
 For deploy the project, I used the llama.cpp to convert my trained model to a '.gguf' file. With loading the quantinized file, we only need about 1G RAM for runing the model.  
 
