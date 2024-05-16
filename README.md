@@ -71,14 +71,11 @@ Compared to the example in [eric-mitchell/direct-preference-optimization: Refere
 Besides, comparing the two losses, we can find that the IPO loss's rewards of chosen responce was declining in the training stage yet the DPO's is rising. **This phenomenon demonstrates that the IPO loss effectively avoids greedy policies.** 
 
 ## 🤗Huggingface Space Deployment
-<script
-	type="module"
-	src="https://gradio.s3-us-west-2.amazonaws.com/4.31.3/gradio.js"
-></script>
-<gradio-app src="https://qiyuwu-dpo-internlm2-1-8b.hf.space"></gradio-app>
+
 Above is the chatbot deployed on Huggingface Space, you can have a try😄(due to the poor computility of the 2vCPU, the responce time may be about a minute).
 
-For deploy the project, I used the llama.cpp to convert my trained model to a '.gguf' file. With loading the quantinized file, we only need about 1G RAM for runing the model.   
+For deploy the project, I used the llama.cpp to convert my trained model to a '.gguf' file. With loading the quantinized file, we only need about 1G RAM for runing the model.  
+
 ## 📄Reference
 
 The work is based on a lot of previous work and blogs, as well as some HuggingFace courses and documentation. Many thanks to authors for sharing this, it has helped me gain a lot. Listed below are the references I used to learn.
