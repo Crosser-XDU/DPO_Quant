@@ -2,7 +2,7 @@
   DPO_Quant
 </h1>
 <p align="center">
-🤗 <a href="https://huggingface.co/spaces/QiyuWu/DPO_Internlm2_1_8B" target="_blank">Hugging Face Space</a> • 🎢<a href="https://wandb.ai/qiyuwu/internlm_1_8B_DPO_Quant?nw=nwuserwqy123202108" terget="_blank">Wandb
+🤗 <a href="https://huggingface.co/spaces/QiyuWu/DPO-Internlm2_chat_1_8B" target="_blank">Hugging Face Space</a> • 🎢<a href="https://wandb.ai/qiyuwu/internlm_1_8B_DPO_Quant?nw=nwuserwqy123202108" terget="_blank">Wandb
 </p> 
   
 Learning from human preferences is a paradigm adopted in the natural language processing literature to better align LLM to human desiderata. Recently RLHF has been used successfully in many senses to get a better performance. In 2023 NeurIPS, [DPO](https://arxiv.org/abs/2305.18290)  was proposed for addressing the problem of huge resource consumption in training. However, for people who don't have enough GPUs, training a model with DPO is still a difficult situation. In this reposity, I implemented a code reproduction of the DPO algorithm and the [BitsandBytes](https://github.com/TimDettmers/bitsandbytes) is used for the model quantization to make run of DPO on a 24G 4090 possible. Besides, I deployed a trained model on the Huggingface Space using [llama.cpp](https://github.com/ggerganov/llama.cpp) for accelerating.
@@ -72,7 +72,7 @@ Besides, comparing the two losses, we can find that the IPO loss's rewards of ch
 
 ## 🤗Huggingface Space Deployment
 
-Above is the chatbot deployed on Huggingface Space, you can have a try(due to the poor computility of the 2vCPU, the responce time may be about a minute)[link](https://huggingface.co/spaces/QiyuWu/DPO_Internlm2_1_8B).
+Above is the chatbot deployed on Huggingface Space, you can have a try(due to the poor computility of the 2vCPU, the responce time may be about a minute)[link](https://huggingface.co/spaces/QiyuWu/DPO-Internlm2_chat_1_8B).
 
 For deploy the project, I used the llama.cpp to convert my trained model to a '.gguf' file. With loading the quantinized file, we only need about 1G RAM for runing the model.  
 
