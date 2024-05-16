@@ -55,7 +55,7 @@ Experiments were conducted with BitsandBytes to load the quantization model. Two
 In SFT, the run lasts 2h20min, we can see from the figures that the eval_loss snowly decreases when the step grows.
 
 ![pythia2.8B](./output/Pythia_SFT.png)
-![internlm2-chat-1_8b-sft](./ouput/Intern_SFT.png)
+![internlm2-chat-1_8b-sft](./output/Intern_SFT.png)
 
 For more details, check [here](https://wandb.ai/qiyuwu/pythia2_8B_DPO_Quant/runs/co6guc8k?nw=nwuserwqy123202108) and [here](https://wandb.ai/qiyuwu/internlm_1_8B_DPO_Quant/runs/w03t6lsm?nw=nwuserwqy123202108)
 
