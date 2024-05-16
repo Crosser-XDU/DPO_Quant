@@ -1,10 +1,10 @@
-# DPO_Quant
+# <center> DPO_Quant
 
 Learning from human preferences is a paradigm adopted in the natural language processing literature to better align LLM to human desiderata. Recently RLHF has been used successfully in many senses to get a better performance. In 2023 NeurIPS, [DPO](https://arxiv.org/abs/2305.18290)  was proposed for addressing the problem of huge resource consumption in training. However, for people who don't have enough GPUs, training a model with DPO is still a difficult situation. In this reposity, I implemented a code reproduction of the DPO algorithm and the [BitsandBytes](https://github.com/TimDettmers/bitsandbytes) is used for the model quantization to make run of DPO on a 24G 4090 possible.
 
 
 
-## Getting Started
+## 👋Getting Started
 
 - System requirement: Ubuntu20.04/Windows 11, Cuda 12.1
 - Tested GPUs: RTX4090
@@ -32,7 +32,7 @@ export HF_ENDPOINT="https://hf-mirror.com"
 
 
 
-## Training
+## 📈Training
 
 Model pythia2.8B and dataset Anthropic/hh-rlhf is used in the training. For customized training, you need change  `dataset_name` and `model_name` in the file config.yaml.
 
@@ -44,7 +44,7 @@ python Train.py
 
 
 
-## Experiment Analysis
+## 🤔Experiment Analysis
 
 I conducted the experiment with BitsandBytes to load the quantization model. The main pipline of DPO is (1)Training the model using SFT on a preference dataset and (2)Traing the model using DPO on the same dataset.
 
@@ -63,7 +63,7 @@ For more details, check [here](https://wandb.ai/qiyuwu/pythia2_8B_DPO_Quant/runs
 
 Compared to the example in [eric-mitchell/direct-preference-optimization: Reference implementation for DPO (Direct Preference Optimization) (github.com)](https://github.com/eric-mitchell/direct-preference-optimization), our experiment is more unstable in training, but achieved pretty good results in accuracy. Besides, due to time constraints, our experiments were only trained on top of about 25K conversations, which is why our experiments did not achieve significantly good results on top of some other metrics.
 
-## Reference
+## 📄Reference
 
 The work is based on a lot of previous work and blogs, as well as some HuggingFace courses and documentation. Many thanks to authors for sharing this, it has helped me gain a lot. Listed below are the references I used to learn.
 
