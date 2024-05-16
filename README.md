@@ -2,7 +2,7 @@
   DPO_Quant
 </h1>
 <p align="center">
-🤗 <a href="https://huggingface.co/FlagAlpha" target="_blank">Hugging Face Space</a> • 🎢<a href="https://huggingface.co/spaces/QiyuWu/DPO_Internlm2_1_8B" terget="_blank">Wandb
+🤗 <a href="https://huggingface.co/spaces/QiyuWu/DPO_Internlm2_1_8B" target="_blank">Hugging Face Space</a> • 🎢<a href="https://wandb.ai/qiyuwu/internlm_1_8B_DPO_Quant?nw=nwuserwqy123202108" terget="_blank">Wandb
 </p> 
 Learning from human preferences is a paradigm adopted in the natural language processing literature to better align LLM to human desiderata. Recently RLHF has been used successfully in many senses to get a better performance. In 2023 NeurIPS, [DPO](https://arxiv.org/abs/2305.18290)  was proposed for addressing the problem of huge resource consumption in training. However, for people who don't have enough GPUs, training a model with DPO is still a difficult situation. In this reposity, I implemented a code reproduction of the DPO algorithm and the [BitsandBytes](https://github.com/TimDettmers/bitsandbytes) is used for the model quantization to make run of DPO on a 24G 4090 possible.
 
