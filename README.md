@@ -18,6 +18,7 @@ Learning from human preferences is a paradigm adopted in the natural language pr
 ```
  conda create -n dpo python=3.10
  conda activate dpo
+ git clone https://github.com/Crosser-XDU/DPO_Quant.git
 ```
 
 ### Install packages with `pip`
