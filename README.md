@@ -79,7 +79,7 @@ For deploy the project, I used the llama.cpp to convert my trained model to a '.
 
 ## 📄Reference
 
-The work is based on a lot of previous work and blogs, as well as some HuggingFace courses and documentation. Many thanks to authors for sharing this, it has helped me gain a lot. Listed below are the references I used to learn.
+The work is based on a lot of previous work and blog, as well as some HuggingFace courses and documentation. Many thanks to authors for sharing this, it has helped me gain a lot. Listed below are the references I used to learn.
 
 - [eric-mitchell/direct-preference-optimization: Reference implementation for DPO (Direct Preference Optimization) (github.com)](https://github.com/eric-mitchell/direct-preference-optimization)
 - [FSDP-QLoRA (huggingface.co)](https://huggingface.co/docs/bitsandbytes/main/en/fsdp_qlora)
